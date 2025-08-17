@@ -6,19 +6,20 @@ import abc
 from .base import PaddleXPredictorWrapper, PredictorCLISubcommandExecutor
 
 class ObjectDetection(PaddleXPredictorWrapper):
-    def __init__(self, *, img_size=..., threshold=..., layout_nms=..., layout_unclip_ratio=..., layout_merge_bboxes_mode=..., **kwargs) -> None:
-        ...
-    
-
+    def __init__(
+        self,
+        *,
+        img_size=...,
+        threshold=...,
+        layout_nms=...,
+        layout_unclip_ratio=...,
+        layout_merge_bboxes_mode=...,
+        **kwargs,
+    ) -> None: ...
 
 class ObjectDetectionSubcommandExecutor(PredictorCLISubcommandExecutor):
     @property
     @abc.abstractmethod
-    def wrapper_cls(self):
+    def wrapper_cls(self): ...
+    def execute_with_args(self, args):  # -> None:
         ...
-    
-    def execute_with_args(self, args): # -> None:
-        ...
-    
-
-

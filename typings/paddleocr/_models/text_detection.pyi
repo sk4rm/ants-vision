@@ -7,22 +7,17 @@ from ._text_detection import TextDetectionMixin, TextDetectionSubcommandExecutor
 
 class TextDetection(TextDetectionMixin, PaddleXPredictorWrapper):
     @property
-    def default_model_name(self): # -> Literal['PP-OCRv5_server_det']:
+    def default_model_name(self):  # -> Literal['PP-OCRv5_server_det']:
         ...
-    
     @classmethod
-    def get_cli_subcommand_executor(cls): # -> TextDetectionSubcommandExecutor:
+    def get_cli_subcommand_executor(cls):  # -> TextDetectionSubcommandExecutor:
         ...
-    
 
-
-class TextDetectionSubcommandExecutor(TextDetectionSubcommandExecutorMixin, PredictorCLISubcommandExecutor):
+class TextDetectionSubcommandExecutor(
+    TextDetectionSubcommandExecutorMixin, PredictorCLISubcommandExecutor
+):
     @property
-    def subparser_name(self): # -> Literal['text_detection']:
+    def subparser_name(self):  # -> Literal['text_detection']:
         ...
-    
-    def execute_with_args(self, args): # -> None:
+    def execute_with_args(self, args):  # -> None:
         ...
-    
-
-

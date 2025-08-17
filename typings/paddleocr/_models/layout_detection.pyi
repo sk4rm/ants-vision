@@ -6,23 +6,16 @@ from ._object_detection import ObjectDetection, ObjectDetectionSubcommandExecuto
 
 class LayoutDetection(ObjectDetection):
     @property
-    def default_model_name(self): # -> Literal['PP-DocLayout_plus-L']:
+    def default_model_name(self):  # -> Literal['PP-DocLayout_plus-L']:
         ...
-    
     @classmethod
-    def get_cli_subcommand_executor(cls): # -> LayoutDetectionSubcommandExecutor:
+    def get_cli_subcommand_executor(cls):  # -> LayoutDetectionSubcommandExecutor:
         ...
-    
-
 
 class LayoutDetectionSubcommandExecutor(ObjectDetectionSubcommandExecutor):
     @property
-    def subparser_name(self): # -> Literal['layout_detection']:
+    def subparser_name(self):  # -> Literal['layout_detection']:
         ...
-    
     @property
-    def wrapper_cls(self): # -> type[LayoutDetection]:
+    def wrapper_cls(self):  # -> type[LayoutDetection]:
         ...
-    
-
-

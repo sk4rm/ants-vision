@@ -6,23 +6,16 @@ from ._object_detection import ObjectDetection, ObjectDetectionSubcommandExecuto
 
 class TableCellsDetection(ObjectDetection):
     @property
-    def default_model_name(self): # -> Literal['RT-DETR-L_wired_table_cell_det']:
+    def default_model_name(self):  # -> Literal['RT-DETR-L_wired_table_cell_det']:
         ...
-    
     @classmethod
-    def get_cli_subcommand_executor(cls): # -> TableCellsDetectionSubcommandExecutor:
+    def get_cli_subcommand_executor(cls):  # -> TableCellsDetectionSubcommandExecutor:
         ...
-    
-
 
 class TableCellsDetectionSubcommandExecutor(ObjectDetectionSubcommandExecutor):
     @property
-    def subparser_name(self): # -> Literal['table_cells_detection']:
+    def subparser_name(self):  # -> Literal['table_cells_detection']:
         ...
-    
     @property
-    def wrapper_cls(self): # -> type[TableCellsDetection]:
+    def wrapper_cls(self):  # -> type[TableCellsDetection]:
         ...
-    
-
-

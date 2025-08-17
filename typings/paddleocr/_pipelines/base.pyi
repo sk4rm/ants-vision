@@ -6,28 +6,17 @@ import abc
 from .._abstract import CLISubcommandExecutor
 
 _DEFAULT_ENABLE_HPI = ...
+
 class PaddleXPipelineWrapper(metaclass=abc.ABCMeta):
-    def __init__(self, *, paddlex_config=..., **common_args) -> None:
+    def __init__(self, *, paddlex_config=..., **common_args) -> None: ...
+    def export_paddlex_config_to_yaml(self, yaml_path):  # -> None:
         ...
-    
-    def export_paddlex_config_to_yaml(self, yaml_path): # -> None:
-        ...
-    
     @classmethod
     @abc.abstractmethod
-    def get_cli_subcommand_executor(cls):
-        ...
-    
-
+    def get_cli_subcommand_executor(cls): ...
 
 class PipelineCLISubcommandExecutor(CLISubcommandExecutor):
     @property
     @abc.abstractmethod
-    def subparser_name(self):
-        ...
-    
-    def add_subparser(self, subparsers):
-        ...
-    
-
-
+    def subparser_name(self): ...
+    def add_subparser(self, subparsers): ...

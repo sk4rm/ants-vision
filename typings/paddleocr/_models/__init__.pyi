@@ -15,4 +15,17 @@ from .text_image_unwarping import TextImageUnwarping
 from .textline_orientation_classification import TextLineOrientationClassification
 from .text_recognition import TextRecognition
 
-__all__ = ["DocImgOrientationClassification", "DocVLM", "FormulaRecognition", "LayoutDetection", "SealTextDetection", "TableCellsDetection", "TableClassification", "TableStructureRecognition", "TextDetection", "TextImageUnwarping", "TextLineOrientationClassification", "TextRecognition"]
+__all__ = [
+    "DocImgOrientationClassification",
+    "DocVLM",
+    "FormulaRecognition",
+    "LayoutDetection",
+    "SealTextDetection",
+    "TableCellsDetection",
+    "TableClassification",
+    "TableStructureRecognition",
+    "TextDetection",
+    "TextImageUnwarping",
+    "TextLineOrientationClassification",
+    "TextRecognition",
+]

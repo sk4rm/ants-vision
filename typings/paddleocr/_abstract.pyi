@@ -6,12 +6,6 @@ import abc
 
 class CLISubcommandExecutor(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def add_subparser(self, subparsers):
-        ...
-    
+    def add_subparser(self, subparsers): ...
     @abc.abstractmethod
-    def execute_with_args(self, args):
-        ...
-    
-
-
+    def execute_with_args(self, args): ...

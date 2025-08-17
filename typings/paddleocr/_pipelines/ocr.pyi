@@ -7,33 +7,76 @@ from .base import PaddleXPipelineWrapper, PipelineCLISubcommandExecutor
 
 _DEPRECATED_PARAM_NAME_MAPPING = ...
 _SUPPORTED_OCR_VERSIONS = ...
-class PaddleOCR(PaddleXPipelineWrapper):
-    def __init__(self, doc_orientation_classify_model_name=..., doc_orientation_classify_model_dir=..., doc_unwarping_model_name=..., doc_unwarping_model_dir=..., text_detection_model_name=..., text_detection_model_dir=..., textline_orientation_model_name=..., textline_orientation_model_dir=..., textline_orientation_batch_size=..., text_recognition_model_name=..., text_recognition_model_dir=..., text_recognition_batch_size=..., use_doc_orientation_classify=..., use_doc_unwarping=..., use_textline_orientation=..., text_det_limit_side_len=..., text_det_limit_type=..., text_det_thresh=..., text_det_box_thresh=..., text_det_unclip_ratio=..., text_det_input_shape=..., text_rec_score_thresh=..., text_rec_input_shape=..., lang=..., ocr_version=..., **kwargs) -> None:
-        ...
-    
-    def predict_iter(self, input, *, use_doc_orientation_classify=..., use_doc_unwarping=..., use_textline_orientation=..., text_det_limit_side_len=..., text_det_limit_type=..., text_det_thresh=..., text_det_box_thresh=..., text_det_unclip_ratio=..., text_rec_score_thresh=...):
-        ...
-    
-    def predict(self, input, *, use_doc_orientation_classify=..., use_doc_unwarping=..., use_textline_orientation=..., text_det_limit_side_len=..., text_det_limit_type=..., text_det_thresh=..., text_det_box_thresh=..., text_det_unclip_ratio=..., text_rec_score_thresh=...): # -> list[Any]:
-        ...
-    
-    @deprecated("Please use `predict` instead.")
-    def ocr(self, img, **kwargs): # -> list[Any]:
-        ...
-    
-    @classmethod
-    def get_cli_subcommand_executor(cls): # -> PaddleOCRCLISubcommandExecutor:
-        ...
-    
 
+class PaddleOCR(PaddleXPipelineWrapper):
+    def __init__(
+        self,
+        doc_orientation_classify_model_name=...,
+        doc_orientation_classify_model_dir=...,
+        doc_unwarping_model_name=...,
+        doc_unwarping_model_dir=...,
+        text_detection_model_name=...,
+        text_detection_model_dir=...,
+        textline_orientation_model_name=...,
+        textline_orientation_model_dir=...,
+        textline_orientation_batch_size=...,
+        text_recognition_model_name=...,
+        text_recognition_model_dir=...,
+        text_recognition_batch_size=...,
+        use_doc_orientation_classify=...,
+        use_doc_unwarping=...,
+        use_textline_orientation=...,
+        text_det_limit_side_len=...,
+        text_det_limit_type=...,
+        text_det_thresh=...,
+        text_det_box_thresh=...,
+        text_det_unclip_ratio=...,
+        text_det_input_shape=...,
+        text_rec_score_thresh=...,
+        text_rec_input_shape=...,
+        lang=...,
+        ocr_version=...,
+        **kwargs,
+    ) -> None: ...
+    def predict_iter(
+        self,
+        input,
+        *,
+        use_doc_orientation_classify=...,
+        use_doc_unwarping=...,
+        use_textline_orientation=...,
+        text_det_limit_side_len=...,
+        text_det_limit_type=...,
+        text_det_thresh=...,
+        text_det_box_thresh=...,
+        text_det_unclip_ratio=...,
+        text_rec_score_thresh=...,
+    ): ...
+    def predict(
+        self,
+        input,
+        *,
+        use_doc_orientation_classify=...,
+        use_doc_unwarping=...,
+        use_textline_orientation=...,
+        text_det_limit_side_len=...,
+        text_det_limit_type=...,
+        text_det_thresh=...,
+        text_det_box_thresh=...,
+        text_det_unclip_ratio=...,
+        text_rec_score_thresh=...,
+    ):  # -> list[Any]:
+        ...
+    @deprecated("Please use `predict` instead.")
+    def ocr(self, img, **kwargs):  # -> list[Any]:
+        ...
+    @classmethod
+    def get_cli_subcommand_executor(cls):  # -> PaddleOCRCLISubcommandExecutor:
+        ...
 
 class PaddleOCRCLISubcommandExecutor(PipelineCLISubcommandExecutor):
     @property
-    def subparser_name(self): # -> Literal['ocr']:
+    def subparser_name(self):  # -> Literal['ocr']:
         ...
-    
-    def execute_with_args(self, args): # -> None:
+    def execute_with_args(self, args):  # -> None:
         ...
-    
-
-

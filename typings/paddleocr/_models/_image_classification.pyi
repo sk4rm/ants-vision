@@ -6,19 +6,11 @@ import abc
 from .base import PaddleXPredictorWrapper, PredictorCLISubcommandExecutor
 
 class ImageClassification(PaddleXPredictorWrapper):
-    def __init__(self, *, topk=..., **kwargs) -> None:
-        ...
-    
-
+    def __init__(self, *, topk=..., **kwargs) -> None: ...
 
 class ImageClassificationSubcommandExecutor(PredictorCLISubcommandExecutor):
     @property
     @abc.abstractmethod
-    def wrapper_cls(self):
+    def wrapper_cls(self): ...
+    def execute_with_args(self, args):  # -> None:
         ...
-    
-    def execute_with_args(self, args): # -> None:
-        ...
-    
-
-

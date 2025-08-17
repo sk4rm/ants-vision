@@ -7,22 +7,17 @@ from ._text_detection import TextDetectionMixin, TextDetectionSubcommandExecutor
 
 class SealTextDetection(TextDetectionMixin, PaddleXPredictorWrapper):
     @property
-    def default_model_name(self): # -> Literal['PP-OCRv4_mobile_seal_det']:
+    def default_model_name(self):  # -> Literal['PP-OCRv4_mobile_seal_det']:
         ...
-    
     @classmethod
-    def get_cli_subcommand_executor(cls): # -> SealTextDetectionSubcommandExecutor:
+    def get_cli_subcommand_executor(cls):  # -> SealTextDetectionSubcommandExecutor:
         ...
-    
 
-
-class SealTextDetectionSubcommandExecutor(TextDetectionSubcommandExecutorMixin, PredictorCLISubcommandExecutor):
+class SealTextDetectionSubcommandExecutor(
+    TextDetectionSubcommandExecutorMixin, PredictorCLISubcommandExecutor
+):
     @property
-    def subparser_name(self): # -> Literal['seal_text_detection']:
+    def subparser_name(self):  # -> Literal['seal_text_detection']:
         ...
-    
-    def execute_with_args(self, args): # -> None:
+    def execute_with_args(self, args):  # -> None:
         ...
-    
-
-

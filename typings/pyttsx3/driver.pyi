@@ -34,10 +34,8 @@ class DriverProxy:
         @type debug: bool
         """
         ...
-    
-    def __del__(self) -> None:
-        ...
-    
+
+    def __del__(self) -> None: ...
     def notify(self, topic, **kwargs) -> None:
         """
         Sends a notification to the engine from the driver.
@@ -48,7 +46,7 @@ class DriverProxy:
         @type kwargs: dict
         """
         ...
-    
+
     def setBusy(self, busy) -> None:
         """
         Called by the driver to indicate it is busy.
@@ -57,14 +55,14 @@ class DriverProxy:
         @type busy: bool
         """
         ...
-    
-    def isBusy(self): # -> bool:
+
+    def isBusy(self):  # -> bool:
         """
         @return: True if the driver is busy, false if not
         @rtype: bool.
         """
         ...
-    
+
     def say(self, text, name) -> None:
         """
         Called by the engine to push a say command onto the queue.
@@ -75,14 +73,14 @@ class DriverProxy:
         @type name: str
         """
         ...
-    
+
     def stop(self) -> None:
         """
         Called by the engine to stop the current utterance and clear the queue
         of commands.
         """
         ...
-    
+
     def save_to_file(self, text, filename, name) -> None:
         """
         Called by the engine to push a say command onto the queue.
@@ -93,8 +91,8 @@ class DriverProxy:
         @type name: str
         """
         ...
-    
-    def getProperty(self, name): # -> Any:
+
+    def getProperty(self, name):  # -> Any:
         """
         Called by the engine to get a driver property value.
 
@@ -104,7 +102,7 @@ class DriverProxy:
         @rtype: object
         """
         ...
-    
+
     def setProperty(self, name, value) -> None:
         """
         Called by the engine to set a driver property value.
@@ -115,28 +113,25 @@ class DriverProxy:
         @type value: object
         """
         ...
-    
+
     def runAndWait(self) -> None:
         """
         Called by the engine to start an event loop, process all commands in
         the queue at the start of the loop, and then exit the loop.
         """
         ...
-    
+
     def startLoop(self, useDriverLoop) -> None:
         """Called by the engine to start an event loop."""
         ...
-    
+
     def endLoop(self, useDriverLoop) -> None:
         """Called by the engine to stop an event loop."""
         ...
-    
+
     def iterate(self) -> None:
         """
         Called by the engine to iterate driver commands and notifications from
         within an external event loop.
         """
         ...
-    
-
-

@@ -6,36 +6,22 @@ import abc
 from .._abstract import CLISubcommandExecutor
 
 _DEFAULT_ENABLE_HPI = ...
+
 class PaddleXPredictorWrapper(metaclass=abc.ABCMeta):
-    def __init__(self, *, model_name=..., model_dir=..., **common_args) -> None:
-        ...
-    
+    def __init__(self, *, model_name=..., model_dir=..., **common_args) -> None: ...
     @property
     @abc.abstractmethod
-    def default_model_name(self):
+    def default_model_name(self): ...
+    def predict_iter(self, *args, **kwargs):  # -> Iterator[Any]:
         ...
-    
-    def predict_iter(self, *args, **kwargs): # -> Iterator[Any]:
+    def predict(self, *args, **kwargs):  # -> list[Any]:
         ...
-    
-    def predict(self, *args, **kwargs): # -> list[Any]:
-        ...
-    
     @classmethod
     @abc.abstractmethod
-    def get_cli_subcommand_executor(cls):
-        ...
-    
-
+    def get_cli_subcommand_executor(cls): ...
 
 class PredictorCLISubcommandExecutor(CLISubcommandExecutor):
     @property
     @abc.abstractmethod
-    def subparser_name(self):
-        ...
-    
-    def add_subparser(self, subparsers):
-        ...
-    
-
-
+    def subparser_name(self): ...
+    def add_subparser(self, subparsers): ...
