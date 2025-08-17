@@ -7,7 +7,7 @@ import sys
 from vosk import Model, KaldiRecognizer
 
 MQTT_BROKER_HOST = "localhost"
-MQTT_VOICE_TOPIC = "services/voice"
+MQTT_OCR_TOPIC = "services/ocr"
 q = queue.Queue()
 
 
@@ -19,8 +19,8 @@ def callback(indata, frames, time, status):
 
 def on_connect(client, userdata, flags, reason_code, properties):
     if reason_code == mqtt.MQTT_ERR_SUCCESS:
-        print(f"Successfully connected to MQTT broker.")
-        client.subscribe(MQTT_VOICE_TOPIC)
+        print("Successfully connected to MQTT broker.")
+        client.subscribe(MQTT_OCR_TOPIC)
 
 
 def on_message(client, userdata, msg):
@@ -47,6 +47,9 @@ try:
                 result = json.loads(rec.Result())
                 text = result["text"]
                 print(text if text != "" else "🤫")
+
+                if "cringe" in text:
+                    mqttc.publish(MQTT_OCR_TOPIC, "cringe detected")
 
 except KeyboardInterrupt:
     print("bye bye 👋")

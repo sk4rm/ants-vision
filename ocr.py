@@ -4,12 +4,12 @@ from paddleocr import PaddleOCR
 import paho.mqtt.client as mqtt
 
 MQTT_BROKER_HOST = "localhost"
-MQTT_VOICE_TOPIC = "services/voice"
+MQTT_OCR_TOPIC = "services/ocr"
 
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}.")
-    client.subscribe(MQTT_VOICE_TOPIC)
+    client.subscribe(MQTT_OCR_TOPIC)
 
 
 def on_message(client, userdata, msg):
