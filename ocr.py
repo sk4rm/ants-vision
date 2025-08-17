@@ -3,6 +3,8 @@ import pyttsx3
 from paddleocr import PaddleOCR
 import paho.mqtt.client as mqtt
 
+global should_capture
+should_capture = False
 MQTT_BROKER_HOST = "localhost"
 MQTT_OCR_TOPIC = "services/ocr"
 
@@ -14,6 +16,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
 
 def on_message(client, userdata, msg):
     print(msg.topic + " " + str(msg.payload))
+    global should_capture
+    should_capture = True
 
 
 ocr = PaddleOCR()
@@ -40,7 +44,9 @@ while True:
     key = cv2.waitKey(1)
 
     # SPACE = capture image
-    if key == 32:
+    # if key == 32:
+    if should_capture:
+        should_capture = False
         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         results = ocr.predict(rgb)
